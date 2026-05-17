@@ -144,22 +144,6 @@ Difficulty is controlled by limiting how many moves ahead the AI is allowed to t
 
 ---
 
-### `gui.py` — Graphical Interface
-
-| Component              | Description |
-|------------------------|-------------|
-| **Left Panel**         | Fixed 220px column: title, score tracker, status label, difficulty selector, restart button |
-| **Right Panel**        | 370×370 Canvas: grid lines, X/O marks, hover ghost, win highlight line |
-| `_draw_grid()`         | Draws the 3×3 grid lines on the canvas |
-| `_draw_x()` / `_draw_o()` | Draws X (two crossing lines) or O (ellipse) in a cell |
-| `_on_canvas_hover()`   | Shows a subtle cell highlight before the user clicks |
-| `_on_canvas_click()`   | Handles the human's move |
-| `_ai_turn()`           | Triggers Minimax and applies the AI's move after a 250ms delay |
-| `_end_game()`          | Updates scores, sets status text, draws the win line |
-| `_restart_game()`      | Clears board state and canvas for a new round |
-
----
-
 ## 🎨 GUI Layout
 
 ```
@@ -193,12 +177,3 @@ Difficulty is controlled by limiting how many moves ahead the AI is allowed to t
 | Difficulty   | 3 levels (depth 1 / 3 / 9) |
 | Win Detection| All 8 patterns checked after every move |
 
----
-
-## 💡 Possible Future Enhancements
-
-- [ ] Alpha-Beta Pruning — prune redundant branches to speed up Hard mode
-- [ ] Choose your symbol — let the human pick X or O
-- [ ] First-move selector — let the human or AI go first
-- [ ] Sound effects on win / draw
-- [ ] Animated mark drawing (stroke-by-stroke canvas animation)
